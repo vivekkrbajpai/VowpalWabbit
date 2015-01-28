@@ -1,0 +1,18 @@
+{
+  "name": "VowpalWabbit",
+  "version": "0.0.1",
+  "description": "VowapalWabbit Nodejs Client",
+  "keyword":["Vowpal Wabbit", "Logistic Regression", "Machine Learning"],
+  "main": "./index.js",
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "repository":{
+  	"type": "git",
+  	"url" : "git://github.com/vivekkrbajpai/VowpalWabbit.git"
+
+  	},
+  "author": "Vivek Bajpai <driffer85@gmail.com>",
+  "license": "MIT"
+
+}

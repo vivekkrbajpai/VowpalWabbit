@@ -1,5 +1,5 @@
 {
-  "name": "VowpalWabbit",
+  "name": "vowpal-wabbit",
   "version": "0.0.1",
   "description": "VowapalWabbit Nodejs Client",
   "keyword":["Vowpal Wabbit", "Logistic Regression", "Machine Learning"],

@@ -2,7 +2,7 @@
   "name": "vowpal-wabbit",
   "version": "0.0.1",
   "description": "VowapalWabbit Nodejs Client",
-  "keyword":["Vowpal Wabbit", "Logistic Regression", "Machine Learning"],
+  "keywords":["Vowpal Wabbit", "Logistics Regression", "Machine Learning"],
   "main": "./index.js",
   "scripts": {
     "test": "node ./test.js"

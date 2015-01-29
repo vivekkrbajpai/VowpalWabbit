@@ -1,6 +1,6 @@
 {
   "name": "vowpal-wabbit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "VowapalWabbit Nodejs Client",
   "keywords":["Vowpal Wabbit", "Logistics Regression", "Machine Learning"],
   "main": "./index.js",

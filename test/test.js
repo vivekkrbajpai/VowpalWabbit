@@ -26,7 +26,7 @@ describe('Prediction Test', function(){
 			client.getPrediction('x y z', function(err, result){
 				console.log(result);
 				expect(err).to.be.null;
-				expect(result).to.equal('1.000000');
+				expect(result).to.equal('1.00000');
 				done();
 			})
 		});
@@ -34,7 +34,7 @@ describe('Prediction Test', function(){
 			var client = vw.createClient(26542, 'localhost');
 			client.getPrediction('a b c', function(err, result){
 				expect(err).to.be.null;
-				expect(result).to.equal('0.000000');
+				expect(result).to.equal('0.00000');
 				done();
 			})
 		});

@@ -1,11 +1,15 @@
 {
   "name": "vowpal-wabbit",
-  "version": "0.0.2",
-  "description": "VowapalWabbit Nodejs Client",
-  "keywords":["Vowpal Wabbit", "Logistics Regression", "Machine Learning"],
-  "main": "./index.js",
+  "version": "0.0.3",
+  "description": "Vowapal Wabbit Nodejs Client",
+  "keywords":["Vowpal Wabbit", "Logistic Regression", "Machine Learning"],
+  "main": "index.js",
   "scripts": {
-    "test": "node ./test.js"
+    "test": "mocha"
+  },
+   "devDependencies": {
+    "mocha":"*",
+    "chai": "*"
   },
   "repository":{
   	"type": "git",

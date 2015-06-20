@@ -1,9 +1,9 @@
 var net = require('net'),
-Queue = require('./queue.js'),
+Queue = require('./lib/queue.js'),
 util = require('util'),
 events = require('events'),
 default_port = 26542,
-parser = require('./parser.js'),
+parser = require('./lib/parser.js'),
 default_host = '127.0.0.1';
 
 function VWClient(net_client, options){
@@ -77,18 +77,18 @@ VWClient.prototype.onConnect = function(){
 	this.isConnected = true;
 	this.reconnecting = null;
 	this.init_parser();
-	this.emit("connect");  
+	this.emit("connect");	
 	
 
 }
 VWClient.prototype.init_parser = function(){
 	var self = this;
 	this.reply_parser = new parser.Parser({});
-	this.reply_parser.on('reply' ,function(data){
+	this.reply_parser.on('reply', function(data){
 
 		self.return_reply(data);
 	});
-	this.reply_parser.on('reply error' , function(error){
+	this.reply_parser.on('reply error', function(error){
 		if (reply instanceof Error) {
 			self.return_error(reply);
 		} else {
@@ -153,7 +153,7 @@ VWClient.prototype.flush_and_error = function(err){
 
 }
 VWClient.prototype.onData = function(buffered_data){
-	console.log(Date.now(),'data')
+	
 	try{
 		this.reply_parser.execute(buffered_data);		
 	}catch(err){
@@ -168,7 +168,7 @@ VWClient.prototype.return_reply = function(buffered_data){
 	var command_obj, processed_data;
 	processed_data = buffered_data 
 	command_obj = this.command_queue.shift();
-	command_obj.callback( null , processed_data);
+	command_obj.callback(null, processed_data);
 
 } 
 
@@ -176,8 +176,8 @@ function Command(args, callback){
 	this.args = args;
 	this.callback = callback;
 }
-VWClient.prototype.getPrediction = function( args, callback){
-	var command_obj , write_count = 0;
+VWClient.prototype.getPrediction = function(args, callback){
+	var command_obj, write_count = 0;
 	var stream = this.stream;
 	if(typeof callback === 'function' && typeof callback != undefined){
 
@@ -191,7 +191,7 @@ VWClient.prototype.getPrediction = function( args, callback){
 			try{
 				if(stream.writable){
 				
-					write_count += !stream.write("'"+argslength+"#| "+args +"\n")
+					write_count += !stream.write("'"+argslength+"| "+args+"\n")
 					
 				}
 			}catch(stream_write_error){
